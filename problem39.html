@@ -1,0 +1,46 @@
+<html>
+
+<script>
+
+    function olaylari_bul(x){
+        var a=1;
+        var b=1;
+        var kac_tane= 0;
+        var c;
+
+        while(a+b<x){
+            while(a+b<x){
+                if(Math.sqrt(a*a+b*b) == Math.floor(Math.sqrt(a*a+b*b))){
+                    c = Math.sqrt(a*a+b*b);
+                    if(a+b+c == x){
+                        kac_tane++;
+                    }
+                }
+                b++;
+            }
+            a++;
+            b=a;
+        }
+        return kac_tane;
+    }
+
+    function binde_max(){
+        var count  = 12;
+        var max = 0;
+        var count_tut;
+        while(count <=1000){
+            if(olaylari_bul(count) > max){
+                max = olaylari_bul(count);
+                count_tut = count;
+            }
+            count++;
+        }
+        return count_tut;
+    }
+
+    document.write(binde_max());
+
+
+
+</script>
+</html>
